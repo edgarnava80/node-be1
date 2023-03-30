@@ -6,6 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Use NodeJS 16.X
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.17.x
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
       - name: Install
         run: npm install
       - name: Build
