@@ -2,6 +2,9 @@
 v: 0
 micros:
   - name: node-be1
-    src: ./dist
+    src: .
     engine: nodejs16
     primary: true
+    serve: dist/
+    commands:
+      - npm run build
