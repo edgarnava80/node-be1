@@ -1,17 +1,3 @@
-# name: Deploy to Deta
-# on: push
-
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2 #Be sure you check-out the repo first. Deta CLI needs access to the files
-#       - uses: devbijay/gh-deta-deploy@1.1 #BogDAAAMN/deta-deploy-action@v1.0.1
-#         with:
-#           deta-access-token: ${{ secrets.DETA_ACCESS_TOKEN }} #Deta access token https://docs.deta.sh/docs/cli/auth
-#           deta-name: 'node-be1' #Deta Micro name https://docs.deta.sh/docs/cli/commands/#deta-clone
-#           deta-project: 'node-be' #Optional: Deta project name https://docs.deta.sh/docs/cli/commands/#deta-clone
-#           deta-project-dir: '.' #Optional: directory to be deployed on Deta. Default is the root "." 
 name: Push to Space
 on: push
 
@@ -20,6 +6,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Build
+        run: |
+          npm run build
       - name: Deta Space Deployment Github Action
         uses: neobrains/space-deployment-github-action@v0.3
         with:
