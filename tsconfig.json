@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "module": "Node16",
-    "moduleResolution": "node16",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "sourceMap": true,
-    "outDir": "dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
   },
-  "include": ["src/**/*"],
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["./src/**/*"],
   "exclude": ["node_modules"]
 }

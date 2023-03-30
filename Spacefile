@@ -2,7 +2,7 @@
 v: 0
 micros:
   - name: node-be1
-    src: .
+    src: ./dist
     engine: nodejs16
     primary: true
-    serve: ./dist/
+    # serve: ./dist/
