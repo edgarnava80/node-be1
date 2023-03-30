@@ -5,6 +5,4 @@ micros:
     src: .
     engine: nodejs16
     primary: true
-    serve: dist/
-    commands:
-      - npm run build
+    serve: ./dist/
